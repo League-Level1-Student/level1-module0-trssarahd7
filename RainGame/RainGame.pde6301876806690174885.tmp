@@ -1,0 +1,30 @@
+void checkCatch(int x){
+     if (x > mouseX && x < mouseX+100)
+          score++;
+     else if (score > 0) 
+          score--;
+     println("Your score is now: " + score); }
+void setup(){
+size(300,300);
+}
+int x =10;
+int y =10;
+int score =0;
+void draw () {
+background(0,175,250);
+ fill (0, 20, 200);
+  stroke(200,200,200);
+  ellipse(x, y, 10, 20 );
+  fill(90, 0, 80);
+  stroke (0,0,0);
+  rect(mouseX, 280, 30, 20);
+  y= y+5;
+  fill(0, 0, 0);
+textSize(16);
+text("Score: " + score, 20, 20);
+  if (y== 300){
+  y = 10;
+  checkCatch(x);
+  x = (int) random(300);
+  }
+  }
